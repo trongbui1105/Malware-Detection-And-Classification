@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+	<link rel="shortcut icon" href="{{ url_for('static', filename="img/aa.jpg")}}"/>
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap.min.css")}}" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/owl.carousel.css")}}" />
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/owl.theme.default.css")}}" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/magnific-popup.css")}}" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="{{ url_for('static', filename="css/font-awesome.min.css")}}">
+
+	<!-- Custom stlylesheet -->
+{#	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/style.css")}}" />#}
+
+  <!-- FOR UPLOAD BUTTON -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:100,300'>
+	<link rel="stylesheet" href="{{ url_for('static', filename="css/styles.css")}}">
+	<!--FINISH-->
+
+    <script  src="{{ url_for('static', filename="js/login.js")}}"></script>
+
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Background Image -->
+		<div class="bg-img" style="background-image: url('{{ url_for('static', filename="./img/hacker.jpg")}}');">
+			<div class="overlay"></div>
+		</div>
+		<!-- /Background Image -->
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+					<!-- Logo -->
+					<div style="text-align: center">
+						<br>
+						<a href="index.html">
+							<h3 style="color:white; text-align: center" class="logo-alt">Malware detection</h3>
+						</a>
+					</div>
+					<!-- /Logo -->
+			</div>
+		</nav>
+		<!-- /Nav -->
+
+		<!-- home wrapper -->
+		<div class="home-wrapper">
+			<div class="container">
+				<div class="row">
+
+					<!-- home content -->
+    <center><br><br><br>
+
+        <div class="upload">
+
+        {% block body %}
+        {% if session['logged_in'] %}
+
+        You're logged in already!
+
+        {% else %}
+
+        <form>
+        <div class="login">
+        <div class="login-screen">
+        <div class="app-title">
+        <h1 style="padding-top: 20px;">Login</h1>
+        </div>
+
+        <div class="login-form">
+        <div class="control-group">
+            <input type="text" pattern="[0-9]*" class="login-field" value="" placeholder="Phone Number" id="phone">
+            <input type="text" style="margin-top: 10px" pattern="[0-9]*" class="login-field" value="" placeholder="Enter OTP" id="otp">
+        </div>
+        <input style="margin: 20px" id="submit" type="submit" value="Send OTP" class="btn btn-primary btn-lg">
+
+        </div>
+        </div>
+        </div>
+        </form>{% endif %}
+        {% endblock %}
+    </div></center>
+					<!-- /home content -->
+				</div>
+			</div>
+		</div>
+		<!-- /home wrapper -->
+
+	</header>
+	<!-- /Header -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="{{ url_for('static', filename="js/jquery.min.js")}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename="js/bootstrap.min.js")}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename="js//owl.carousel.min.js")}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename="js/jquery.magnific-popup.js")}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename="js/main.js")}}"></script>
+	<script  src="{{ url_for('static', filename="js/index.js")}}"></script>
+
+</body>
+
+</html>
